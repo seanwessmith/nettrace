@@ -16,7 +16,7 @@ try {
   await chmod(outFile, 0o755);
   console.log('Updated shebang and permissions for', outFile);
 } catch (err) {
-  console.error('ensure-shebang: skipped or failed:', err?.message || err);
+  console.error('ensure-shebang: skipped or failed:', (err as any)?.message || err);
 }
 
 

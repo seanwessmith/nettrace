@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "bun build ./src/index.ts --target=node --external=blessed --external=blessed-contrib --sourcemap --outdir=dist",
-    "postbuild": "bun run ./scripts/ensure-shebang.mjs",
+    "postbuild": "bun run ./scripts/ensure-shebang.ts",
     "prepublishOnly": "bun run build",
     "release:patch": "npm version patch && bun publish",
     "release:minor": "npm version minor && bun publish",
