@@ -1,0 +1,36 @@
+{
+  "name": "nettrace",
+  "version": "0.1.2",
+  "description": "Terminal UI to visualize HTTP client spans via OTLP/HTTP JSON",
+  "type": "module",
+  "private": false,
+  "bin": {
+    "nettrace": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts --target=node --external=blessed --external=blessed-contrib --sourcemap --outdir=dist",
+    "postbuild": "bun run ./scripts/ensure-shebang.mjs",
+    "prepublishOnly": "bun run build",
+    "release:patch": "npm version patch && bun publish",
+    "release:minor": "npm version minor && bun publish",
+    "release:major": "npm version major && bun publish"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/bun": "1.2.22"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@types/blessed": "^0.1.25",
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.11.0"
+  }
+}
