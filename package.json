@@ -1,6 +1,6 @@
 {
   "name": "nettrace",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Terminal UI to visualize HTTP client spans via OTLP/HTTP JSON",
   "type": "module",
   "private": false,
